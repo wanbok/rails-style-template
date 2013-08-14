@@ -1,0 +1,45 @@
+body {
+  padding-bottom: 40px;
+  /*width: 900px;*/
+  margin: auto;
+}
+
+.jumbotron {
+  padding-top: 60px;
+}
+
+.navbar .container-fluid {
+/*  width: 900px;*/
+  margin: auto;
+}
+
+.navbar .brand {
+	padding-right: 0;
+  padding-left: 0;
+  margin-right: 20px;
+  float: right;
+  font-weight: bold;
+  color: #000;
+  text-shadow: 0 1px 0 rgba(255,255,255,.1), 0 0 30px rgba(255,255,255,.125);
+  -webkit-transition: all .2s linear;
+     -moz-transition: all .2s linear;
+          transition: all .2s linear;
+}
+
+.navbar .brand:hover {
+  text-decoration: none;
+  text-shadow: 0 1px 0 rgba(255,255,255,.1), 0 0 30px rgba(255,255,255,.4);
+}
+
+td.actions {
+  padding-right: 2px;
+  padding-left: 2px;
+}
+
+footer {
+  text-align: center;
+}
+
+.custom {
+    width: 100px !important;
+}

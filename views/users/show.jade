@@ -1,0 +1,50 @@
+extends ../layout
+
+block content
+  .page-header
+    h1
+      | User
+      span.pull-right
+        a.btn.btn-primary(href='/users/'+user.userId+'/installs') Installed Apps
+        | &nbsp;
+        a.btn.btn-inverse(href='/users') Back
+        | &nbsp;
+        a.btn(href='/users/'+user.userId+'/edit') Edit
+        | &nbsp;
+        a.btn.btn-danger.apiDestroy(href='/users/'+user.userId) Destroy
+  table.table.table-bordered.table-striped
+    tbody
+      tr
+        td
+          strong Name
+        td= user.name
+      tr
+        td
+          strong Birthday
+        td= user.birth
+      tr
+        td
+          strong School
+        td= user.school
+      tr
+        td
+          strong Grade
+        td= user.grade
+      tr
+        td
+          strong Class
+        td= user.class
+      tr
+        td
+          strong Address
+        td= user.address
+      tr
+        td
+          strong Address for School
+        td= user.addressForSchool
+      tr
+        td
+          strong Friends
+        td 
+          - for (var i = (typeof user.followings !== 'undefined') ? user.followings.length - 1 : -1; i >= 0; i--)
+            = user.followings[i]

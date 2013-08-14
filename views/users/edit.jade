@@ -1,0 +1,9 @@
+extends ../layout
+
+block content
+  .page-header
+    h1
+      | Edit User
+      span.pull-right
+        a.btn.btn-inverse(href='/users/'+user.userId) Back
+  include form

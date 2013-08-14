@@ -1,0 +1,101 @@
+!!!
+html(lang='en')
+  head
+    meta(http-equiv='content-type', content='text/html;charset=UTF-8')
+
+    title Healing Server
+
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+
+    link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
+    link(rel='stylesheet', href='/stylesheets/bootstrap-responsive.min.css')
+    link(rel='stylesheet', href='/stylesheets/application.css')
+
+    link(rel='icon', href='/favicon.ico')
+
+    script(type='text/javascript', src='/javascripts/jquery.min.js')
+    script(type='text/javascript', src='/javascripts/bootstrap.min.js')
+    script(type='text/javascript', src='http://underscorejs.org/underscore-min.js')
+    script(type='text/javascript', src='/javascripts/application.js')
+
+  body
+    .navbar.navbar-fixed-top.navbar-inverse
+      .navbar-inner
+        .container-fluid
+          button.btn.btn-navbar(type="button", data-toggle="collapse", data-target=".nav-collapse")
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          a.brand(href='/') Healing Server
+          .nav-collapse.collapse
+            ul.nav
+              li#home
+                a(href='/') Home
+              li#user
+                a(href='/users') User
+              li#app
+                a(href='/apps') App
+              li#category
+                a(href='/categories') Category
+              li#usage
+                a(href='/usages') Usage
+              li#gcm
+                a(href='/gcm') Notify 
+              li#report.dropdown
+                a#dLabel.dropdown-toggle(data-toggle='dropdown', href='#') Analysis 
+                  b.caret
+                ul.dropdown-menu.no-collapse(role='menu', aria-labelledby='dLabel')
+                  li
+                    a(href='/user_usage') User Usage
+                  li
+                    a(href='/correlate') Correlate
+                  li
+                    a(href='/track_location') Track location
+              li#survey
+                a(href='/surveys') Survey
+              li#friendship
+                a(href='/friendships') Friendship
+      script
+        String.prototype.startsWith = function(prefix) {
+          return this.indexOf(prefix) === 0;
+        };
+        var parser = document.createElement('a');
+        parser.href = document.URL;
+        if(parser.pathname.startsWith('/users')) {
+          $(".navbar .nav li#user").addClass('active');
+        } else if(parser.pathname.startsWith('/apps')) {
+          $(".navbar .nav li#app").addClass('active');
+        } else if(parser.pathname.startsWith('/categories')) {
+          $(".navbar .nav li#category").addClass('active');
+        } else if(parser.pathname.startsWith('/usages')) {
+          $(".navbar .nav li#usage").addClass('active');
+        } else if(parser.pathname.startsWith('/user_usage') ||
+                  parser.pathname.startsWith('/correlate') ||
+                  parser.pathname.startsWith('/track_location')) {
+          $(".navbar .nav li#report").addClass('active');
+        } else if(parser.pathname.startsWith('/surveys')) {
+          $(".navbar .nav li#survey").addClass('active');
+        } else if(parser.pathname.startsWith('/friendships')) {
+          $(".navbar .nav li#friendship").addClass('active');
+        } else {
+          $(".navbar .nav li#home").addClass('active');
+        }
+
+    script
+      $('.dropdown-toggle').click(function(e) {
+        e.preventDefault();
+        setTimeout($.proxy(function() {
+          if ('ontouchstart' in document.documentElement) {
+            $(this).siblings('.dropdown-backdrop').off().remove();
+          }
+        }, this), 0);
+      });
+
+    .jumbotron
+    .container-fluid
+      .row-fluid
+        .span12
+          block content
+      hr
+      footer
+        p Copyright © 2012, WanbokChoi.
