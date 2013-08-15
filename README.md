@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Rails-style Template
 ====================
 
@@ -29,3 +30,9 @@ It's a Rails-style template for express.js.
  Start the server:
 
     $ coffee app
+=======
+rails-style-template
+====================
+
+It's a Rails-style template for express.js
+>>>>>>> 7d7113f... Initial commit
