@@ -45,15 +45,11 @@ class UserController
 
   # Updates user with data from `req.body.user`
   update: (req, res) ->
-    console.log 'Update user'
-    User.findOneAndUpdate {_id: req.params.user}, {"$set": req.body.user}, {upsert: true}, (err, user) ->
+    User.findOneAndUpdate {_id: req.params.user}, {"$set": req.body.user}, (err, user) ->
       if not err
-        console.log 'Succeed updating user'
-        console.log user
         res.send user
         res.statusCode = 200
       else
-        console.log 'Failed updating user'
         res.send err
         res.statusCode = 500
     
