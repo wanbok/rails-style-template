@@ -26,35 +26,13 @@ html(lang='en')
             span.icon-bar
             span.icon-bar
             span.icon-bar
-          a.brand(href='/') Healing Server
+          a.brand(href='/') Rails Style Template
           .nav-collapse.collapse
             ul.nav
               li#home
                 a(href='/') Home
               li#user
                 a(href='/users') User
-              li#app
-                a(href='/apps') App
-              li#category
-                a(href='/categories') Category
-              li#usage
-                a(href='/usages') Usage
-              li#gcm
-                a(href='/gcm') Notify 
-              li#report.dropdown
-                a#dLabel.dropdown-toggle(data-toggle='dropdown', href='#') Analysis 
-                  b.caret
-                ul.dropdown-menu.no-collapse(role='menu', aria-labelledby='dLabel')
-                  li
-                    a(href='/user_usage') User Usage
-                  li
-                    a(href='/correlate') Correlate
-                  li
-                    a(href='/track_location') Track location
-              li#survey
-                a(href='/surveys') Survey
-              li#friendship
-                a(href='/friendships') Friendship
       script
         String.prototype.startsWith = function(prefix) {
           return this.indexOf(prefix) === 0;
@@ -63,20 +41,6 @@ html(lang='en')
         parser.href = document.URL;
         if(parser.pathname.startsWith('/users')) {
           $(".navbar .nav li#user").addClass('active');
-        } else if(parser.pathname.startsWith('/apps')) {
-          $(".navbar .nav li#app").addClass('active');
-        } else if(parser.pathname.startsWith('/categories')) {
-          $(".navbar .nav li#category").addClass('active');
-        } else if(parser.pathname.startsWith('/usages')) {
-          $(".navbar .nav li#usage").addClass('active');
-        } else if(parser.pathname.startsWith('/user_usage') ||
-                  parser.pathname.startsWith('/correlate') ||
-                  parser.pathname.startsWith('/track_location')) {
-          $(".navbar .nav li#report").addClass('active');
-        } else if(parser.pathname.startsWith('/surveys')) {
-          $(".navbar .nav li#survey").addClass('active');
-        } else if(parser.pathname.startsWith('/friendships')) {
-          $(".navbar .nav li#friendship").addClass('active');
         } else {
           $(".navbar .nav li#home").addClass('active');
         }
@@ -98,4 +62,4 @@ html(lang='en')
           block content
       hr
       footer
-        p Copyright © 2012, WanbokChoi.
+        p © WanbokChoi.

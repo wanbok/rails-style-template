@@ -10,9 +10,9 @@ block content
     thead
       tr
         th Name
-        th Birthday
-        th School
-        th Class
+        th Email
+        th Birth
+        th Age
         th 
         th
         th
@@ -20,12 +20,12 @@ block content
       each user in users
         tr
           td= user.name
+          td= user.email
           td= user.birth
-          td= user.school
-          td= user.class
+          td= user.age
           td.actions
-            a.btn.btn-mini.btn-primary(href='/users/'+user.userId) Show
+            a.btn.btn-mini.btn-primary(href='/users/'+user._id) Show
           td.actions
-            a.btn.btn-mini(href='/users/'+user.userId) Edit
+            a.btn.btn-mini(href='/users/'+user._id+'/edit') Edit
           td.actions
-            a.btn.btn-mini.btn-danger.apiDestroy(href='/users/'+user.userId) Destroy
+            a.btn.btn-mini.btn-danger.apiDestroy(href='/users/'+user._id) Destroy

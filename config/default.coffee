@@ -3,11 +3,7 @@
 express = require 'express'
 assets = require 'connect-assets'
 mongoose = require 'mongoose'
-
-global.moment = require 'moment'
 global._ = require 'underscore'
-
-global.DB_NAME = 'dbname'
 
 module.exports = ->
 	baseDir = @set 'baseDir'
@@ -22,7 +18,7 @@ module.exports = ->
 	# DB Setting.
 	# db_config = "mongodb://#{config.DB_USER}:#{config.DB_PASS}@#{config.DB_HOST}:#{config.DB_PORT}/#{config.DB_NAME}"
 	# mongoose.connect db_config
-	mongoose.connect 'mongodb://localhost/' + DB_NAME
+	mongoose.connect 'mongodb://localhost/' + 'dbname'
 
 	# Access-Control-Allow-Origin
 	# @use (req, res, next) ->

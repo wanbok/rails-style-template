@@ -3,7 +3,10 @@
   "description": "A rails-style-template for express.js",
   "homepage": "https://github.com/wanbok/rails-style-template",
   "author": "Wanbok Choi <choi@wanbok.com>",
-  "repository": {"type": "git", "url": "git://github.com/wanbok/rails-style-template.git"},
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/wanbok/rails-style-template.git"
+  },
   "version": "0.0.1",
   "scripts": {
     "start": "coffee app"
@@ -12,12 +15,11 @@
     "coffee-script": "*",
     "express": "~3.1.0",
     "express-resource": "*",
-    "mongoose": "*",
     "connect-assets": "~2.4.0",
     "jade": "~0.28.1",
     "utile": "~0.1.7",
-    "moment": "~2.0.0",
-    "underscore": "~1.4.4"
+    "underscore": "*",
+    "mongoose": "~3.6.17"
   },
   "license": "MIT"
 }
